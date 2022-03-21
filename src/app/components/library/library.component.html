@@ -1,0 +1,20 @@
+<div #movable  class="bg"> <img width="500" src="/assets/img/webDeveloperSimulator.png"></div>
+
+<div class="row">
+    <div class="card" style="width: 18rem;" *ngFor="let gameData of gameList">
+        
+            <img src="{{gameData.coverImage}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{gameData.title}}</h5>
+              <p class="card-text">{{gameData.description}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">{{gameData.genre}}</li>
+             
+            </ul>
+            <div class="card-body">
+              <button class="btn btn-danger" *ngIf="isLogged" (click)="delete(gameData.id)">Delete</button>
+            </div>
+          </div>
+</div>
+

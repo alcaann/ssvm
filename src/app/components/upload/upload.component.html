@@ -1,0 +1,35 @@
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+        <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 mb-3">Bienvenido a videjuegos.com </h1>
+            <p class="col-lg-10 fs-4">Aquí encontraras el foro más grande de videojuegos en español, acompañado de la segunda biblioteca virtual más grande del mundo.</p>
+            
+        </div>
+        <div class="col-md-10 mx-auto col-lg-5">
+            <div class="p-4 p-md-5 border rounded-3 bg-light">
+                <div class="form-floating mb-3">
+                    <input #titleInput type="text" class="form-control" id="titleField" placeholder="title">
+                    <label for="titleField">Title</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input #genreInput type="text" class="form-control" id="genreField" placeholder="genre">
+                    <label for="genreField">Genre</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input #descInput type="text" class="form-control" id="descField" placeholder="description">
+                    <label for="descField">Description</label>
+                </div>
+                <div class=" my-4">
+                    <label class="form-label" for="coverField">Cover Image</label>
+                    <input type="file" class="form-control" id="coverField" (change)="inputFile($event)">
+                    <div class="text-center my-2"><img class="img-fluid" width="300"  [src]="imgSrc" /></div>
+                </div>
+
+                <div class="p-2" style="color: red;">{{errorMessage}}</div>
+
+                        <button class="w-100 btn btn-lg btn-primary" type="submit" (click)="submitForm()">Upload</button>
+            
+            </div>
+        </div>
+    </div>
+</div>

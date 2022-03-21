@@ -1,0 +1,34 @@
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+        <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 mb-3">Lorem ipsum </h1>
+            <p class="col-lg-10 fs-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur quidem optio ea ducimus, odio rem cumque eos a veniam voluptatibus?</p>
+            
+        </div>
+        <div class="col-md-10 mx-auto col-lg-5">
+            <div class="p-4 p-md-5 border rounded-3 bg-light">
+                <div class="form-floating mb-3">
+                    <input #emailInput type="email" class="form-control" id="emailField" placeholder="name@example.com">
+                    <label for="emailField"> Correo electrónico</label>
+
+                </div>
+                <div class="form-floating mb-3">
+                    <input #passwordInput type="password" class="form-control" id="passwordField" placeholder="password">
+                    <label for="passwordField">Contraseña</label>
+                </div>
+            <div class="checkbox mb-3"><label><input type="checkbox" value="remember-me" (change)="toggleForm($event)"> Soy nuevo usuario </label></div>
+            <div *ngIf="isNewUser" class="form-floating mb-3">
+                <input type="password2" class="form-control" id="password2Field" placeholder="password">
+                    <label for="password2Field">Repetir contraseña</label>
+
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" type="submit" (click)="submitForm()">{{submitText}}</button>
+            <ng-container *ngIf="isNewUser">
+                <hr class="my-4">
+                <small class="text-muted">Al hacer click en Registrarse, estás aceptando los términos de uso.</small>
+            </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="height: 50vh; background-color: rgba(0,0,0, .1); border: solid rgba(0,0,0, .15); border-width: 1px;box-shadow: inset 0 0.5em 1.5em rgb(0 0 0 / 10%);"></div>

@@ -1,0 +1,76 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/home']">
+        <img src="/assets/img/webDeveloperSimulator.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+        Videogames</a>
+    <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" >Trending</a>
+            <a class="nav-item nav-link"  [routerLink]="['/library']">Library</a>
+            <a *ngIf="isLogged" class="nav-item nav-link" (click)="logout()">Logout</a>
+            <a *ngIf="!isLogged" class="nav-item nav-link" [routerLink]="['/login']">Login</a>
+        </div>
+    </div>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>
+<footer class="bg-primary text-white text-center text-lg-start">
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <h5 class="text-uppercase">About us</h5>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem porro assumenda sapiente, vero rerum sunt qui modi fugit repellat enim?
+                </p>
+
+            </div>
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Links</h5>
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <a href="#!" class="text-white text-decoration-none" [routerLink]="['/home']">Home</a>
+                        
+                    </li>
+                    <li>
+                        <a class="text-white text-decoration-none" [routerLink]="['/library']">Library</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0,0,0,0.2)">
+    © 2022 Copyright:
+    <a class="text-white" href="">example.com</a>
+    </div>
+</footer>
+
+
+<!--Toast:-->
+
+
+<div *ngIf="showToast" class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="liveToast" class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="..." class="rounded me-2" alt="...">
+        <strong class="me-auto">{{toastData.title}}</strong>
+        <small>{{toastData.date}}</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        {{toastData.msg}}
+      </div>
+    </div>
+  </div>
